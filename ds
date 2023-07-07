@@ -49,7 +49,49 @@ Class Main{
 
 }
 /********************************************************************************************************************************************************************/
+public class Main {
 
+    public static int calculateHCF(int a, int b) {
+        if (b == 0)
+            return a;
+        return calculateHCF(b, a % b);
+    }
+
+    public static int calculateLCM(int a, int b) {
+        int hcf = calculateHCF(a, b);
+        return (a * b) / hcf;
+    }
+
+    public static void main(String[] args) {
+        int num1 = 12;
+        int num2 = 18;
+        int hcf = calculateHCF(num1, num2);
+        int lcm = calculateLCM(num1, num2);
+
+        System.out.println("HCF of " + num1 + " and " + num2 + " is: " + hcf);
+        System.out.println("LCM of " + num1 + " and " + num2 + " is: " + lcm);
+    }
+}
+
+
+program of hcf new way
+explaination a = 12 b = 18
+if b = 0
+b = 18 not zero
+18,12%18
+6 not equal to 0
+6,12%6
+now b = 0;
+return a 
+a = 6
+
+This code first defines two methods, calculateHCF() and calculateLCM(). The calculateHCF() method takes two numbers as input and returns their highest common factor (HCF). The calculateLCM() method takes two numbers as input and returns their least common multiple (LCM).
+
+The calculateHCF() method uses a recursive approach to find the HCF of two numbers. The method first checks if the second number is 0. If it is, then the method returns the first number. Otherwise, the method calls itself again, but with the second number and the remainder of the first number divided by the second number. This process continues until the second number becomes 0, at which point the method returns the first number.
+
+The calculateLCM() method uses the HCF of two numbers to find their LCM. The method first calculates the HCF of the two numbers. Then, it multiplies the two numbers and divides the product by the HCF.
+
+The main() method of the program takes two numbers as input and calls the calculateHCF() and calculateLCM() methods to find their HCF and LCM. The main() method then prints the HCF and LCM to the console.
 
 
 
