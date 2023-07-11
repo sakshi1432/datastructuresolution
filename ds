@@ -93,8 +93,82 @@ The calculateLCM() method uses the HCF of two numbers to find their LCM. The met
 
 The main() method of the program takes two numbers as input and calls the calculateHCF() and calculateLCM() methods to find their HCF and LCM. The main() method then prints the HCF and LCM to the console.
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+program to find divisor of 12
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static List<Integer> getDivisors(int number) {
+        List<Integer> divisors = new ArrayList<>();
+        
+        for (int i = 1; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                divisors.add(i);
+                if (i != number / i) {
+                    divisors.add(number / i);
+                }
+            }
+        }
+        
+        return divisors;
+    }
+    
+    public static void main(String[] args) {
+        int number = 12;
+        List<Integer> divisors = getDivisors(number);
+        
+        System.out.println("Divisors of " + number + ":");
+        for (int divisor : divisors) {
+            System.out.print(divisor + " ");
+        }
+    }
+The code you provided is a Java program that calculates and prints the divisors of a given number. The program first imports the ArrayList and List classes from the java.util package. These classes are used to store and manipulate lists of integers.
+
+The getDivisors() method takes an integer as input and returns a list of all the divisors of that number. The method first creates a new ArrayList object to store the divisors. Then, it iterates from 1 to the square root of the input number. For each number i in the range, the method checks if number % i == 0. If it is, then the method adds i and number / i to the list of divisors. (The second check is necessary to ensure that the list includes both the divisors and the multiples of the divisors.)
+
+The main() method of the program takes an integer as input and calls the getDivisors() method to get a list of the divisors of that number. Then, the method prints the list of divisors to the console.
+An ArrayList object is a data structure that can store a collection of objects. It is a dynamic array, which means that it can grow and shrink as needed. ArrayList objects are implemented in the java.util package.
+
+To declare an ArrayList object, you need to specify the type of objects that the ArrayList will store. For example, the following code declares an ArrayList that can store Strings:
+
+Java
+ArrayList<String> list = new ArrayList<String>();
+Use code with caution. Learn more
+Once you have declared an ArrayList object, you can add objects to it using the add() method. For example, the following code adds the String "Hello" to the ArrayList list:
+
+Java
+list.add("Hello");
+Use code with caution. Learn more
+You can also remove objects from an ArrayList using the remove() method. For example, the following code removes the String "Hello" from the ArrayList list:
+
+Java
+list.remove("Hello");
+Use code with caution. Learn more
+You can iterate through the elements of an ArrayList using a for loop. For example, the following code prints the elements of the ArrayList list:
+
+Java
+for (String element : list) {
+  System.out.println(element);
+}
+Use code with caution. Learn more
+Here are some of the advantages of using ArrayList objects:
+
+They are dynamic, which means that they can grow and shrink as needed.
+They are efficient, both in terms of space and time.
+They are easy to use.
+Here are some of the disadvantages of using ArrayList objects:
+
+They are not synchronized, which means that they are not thread-safe.
+They can be slow if they are used to store a large number of elements.
+Overall, ArrayList objects are a versatile and efficient data structure that can be used to store a collection of objects. They are a good choice for many applications, especially those where the size of the collection is not known in advance.
 
 
+The code public static List<Integer> getDivisors(int number) is a Java method that returns a list of all the divisors of a number. The public keyword means that the method can be accessed from anywhere in the program. The static keyword means that the method is a class method, which means that it is not associated with any particular instance of the class. The List keyword is the name of the class that represents a list of objects. The <Integer> part of the declaration specifies that the list will store integers.
 
+The getDivisors() method takes an integer as input and returns a list of all the divisors of that number. The method first creates a new List<Integer> object to store the divisors. Then, it iterates from 1 to the square root of the input number. For each number i in the range, the method checks if number % i == 0. If it is, then the method adds i and number / i to the list of divisors. (The second check is necessary to ensure that the list includes both the divisors and the multiples of the divisors.)
+
+Here is an example of how to use the getDivisors() method:
 
 
